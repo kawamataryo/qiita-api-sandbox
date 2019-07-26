@@ -4,6 +4,7 @@ import "./registerServiceWorker";
 import router from "./router";
 import { plugin } from "vue-function-api";
 import dotenv from "dotenv";
+import vuetify from "./plugins/vuetify";
 
 dotenv.config();
 
@@ -13,5 +14,6 @@ Vue.use(plugin);
 
 new Vue({
   router,
+  vuetify,
   render: h => h(App)
 }).$mount("#app");
