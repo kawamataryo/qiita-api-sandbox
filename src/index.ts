@@ -33,7 +33,7 @@ const config: AxiosRequestConfig = {
 
 const main = async () => {
   const getItems = async () => {
-    const res = await axios.get(`${BASE_URL}/authenticated_user/items`, config);
+    const res = await axios.get(`${BASE_URL}/authenticated_user/items?per_page=100`, config);
     return res.data as Item[]
   };
 
@@ -42,8 +42,6 @@ const main = async () => {
   const publish_dates = items.map(item => {
     return item.created_at
   })
-
-  console.log(publish_dates)
 }
 
 main()
