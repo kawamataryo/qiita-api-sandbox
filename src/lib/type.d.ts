@@ -1,4 +1,4 @@
-type Item = {
+type Post = {
   rendered_body: string;
   body: string;
   coediting: string;
