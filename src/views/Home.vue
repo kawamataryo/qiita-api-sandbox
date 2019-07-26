@@ -1,5 +1,9 @@
 <template>
-  <div class="home"></div>
+  <div class="home">
+    <v-container>
+      <h1>hello</h1>
+    </v-container>
+  </div>
 </template>
 
 <script lang="ts">
@@ -9,7 +13,7 @@ import {
   value,
   Wrapper
 } from "vue-function-api";
-import api from "@/lib/api.js";
+import api from "@/lib/api.ts";
 
 export default createComponent({
   setup() {

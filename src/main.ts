@@ -3,10 +3,7 @@ import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
 import { plugin } from "vue-function-api";
-import dotenv from "dotenv";
 import vuetify from "./plugins/vuetify";
-
-dotenv.config();
 
 Vue.config.productionTip = false;
 
