@@ -2,6 +2,7 @@
   <div class="home">
     <v-container>
       <v-card>
+        <v-text-field v-model="userName"></v-text-field>
         <v-list>
           <v-list-item v-for="(post, i) in posts" :key="i">
             <v-list-item-avatar>{{ post.likes_count}}</v-list-item-avatar>
@@ -25,12 +26,14 @@ import api from "@/lib/api.ts";
 export default createComponent({
   setup() {
     const posts: Wrapper<Post[]> = value([]);
+    const userName: Wrapper<string> = value("");
     onBeforeMount(async () => {
       const response = await api.getMyAuthPosts();
       posts.value = response.data;
     });
     return {
-      posts
+      posts,
+      userName
     };
   }
 });

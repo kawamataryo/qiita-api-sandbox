@@ -7,6 +7,6 @@ axios.defaults.headers.common["Authorization"] = `Bearer ${TOKEN}`;
 
 export default {
   getMyAuthPosts: async () => {
-    return await axios.get<Post[]>("/authenticated_user/items");
+    return await axios.get<Post[]>("/authenticated_user/items?per_page=100");
   }
 };
