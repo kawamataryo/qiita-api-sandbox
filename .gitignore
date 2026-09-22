@@ -19,3 +19,8 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Local configuration; commit only the credential-free template.
+.env
+.env.*
+!.env.example

@@ -1,12 +1,12 @@
 import axios from "axios";
 
-const TOKEN = process.env.VUE_APP_QIITA_TOKEN;
-
-axios.defaults.baseURL = "https://qiita.com/api/v2";
-axios.defaults.headers.common["Authorization"] = `Bearer ${TOKEN}`;
+const client = axios.create({ baseURL: "https://qiita.com/api/v2" });
+const userName = process.env.VUE_APP_QIITA_USER || "ryo2132";
 
 export default {
-  getMyAuthPosts: async () => {
-    return await axios.get<Post[]>("/authenticated_user/items?per_page=100");
+  getPosts: async () => {
+    return await client.get<Post[]>(
+      `/users/${encodeURIComponent(userName)}/items?per_page=100`
+    );
   }
 };

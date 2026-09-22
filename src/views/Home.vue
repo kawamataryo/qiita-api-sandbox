@@ -26,7 +26,7 @@ export default createComponent({
   setup() {
     const posts: Wrapper<Post[]> = value([]);
     onBeforeMount(async () => {
-      const response = await api.getMyAuthPosts();
+      const response = await api.getPosts();
       posts.value = response.data;
     });
     return {

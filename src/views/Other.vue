@@ -28,7 +28,7 @@ export default createComponent({
     const posts: Wrapper<Post[]> = value([]);
     const userName: Wrapper<string> = value("");
     onBeforeMount(async () => {
-      const response = await api.getMyAuthPosts();
+      const response = await api.getPosts();
       posts.value = response.data;
     });
     return {
